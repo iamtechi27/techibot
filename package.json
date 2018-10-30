@@ -1,0 +1,12 @@
+{
+  "name": "tard-bot",
+  "version": "1.0.0",
+  "description": "My First Discord Bot",
+  "main": "bot.js",
+  "author": "iamtechi27",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "uws": "^99.0.0",
+    "winston": "^3.1.0"
+  }
+}
