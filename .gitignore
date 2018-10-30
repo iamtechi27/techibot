@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+
+# authentication data for bot to connect to discord
+auth.json
