@@ -82,6 +82,7 @@ client.on('message', msg => {
 	
 	//special update command, hardcoded
 	if (msg.author.id == tbData.consts.techi && msg.content == '~update') {
+		msg.reply('restarting for update...');
 		update();
 	}
 	
