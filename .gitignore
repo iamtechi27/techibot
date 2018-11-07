@@ -62,3 +62,6 @@ typings/
 
 # authentication data for bot to connect to discord
 auth.json
+
+# package-lock file
+package-lock.json

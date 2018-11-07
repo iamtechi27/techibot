@@ -63,44 +63,6 @@ for (priority = 1; priority < 3; priority++) {
 }
 console.log('Finished loading all pre-init modules!');
 
-/* reminders
-async function remind(channelID, userID, message) {
-	var args = message.substring(10).split(' ');
-	var multiplier;
-	var time = args.shift();
-	switch(args[0]) {
-		case 'minutes':
-		case 'minute':
-			multiplier = 60;
-			args.shift();
-			break;
-		case 'hours':
-		case 'hour':
-			multiplier = 3600;
-			args.shift();
-			break;
-		case 'seconds':
-		case 'second':
-			multiplier = 1;
-			args.shift();
-			break;
-		default:
-			multiplier = 60;
-			bot.sendMessage({
-				to: channelID,
-				message: 'No time specifier given, assuming minutes.'
-			});
-			break;
-	}
-	await sleep(time*multiplier*1000);
-	bot.sendMessage({
-		to: channelID,
-		message: `<@${userID}> ` +  args.join(' ')
-	});
-	return;
-}
-*/
-
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	console.log('Loading post-init modules...');
@@ -116,38 +78,24 @@ client.on('ready', () => {
 	console.log('Finished loading all modules!\nReady!');
 });
 
-/* guildmemberadd
-bot.on('guildMemberAdd', function (callback) {
-	bot.sendMessage({
-		to: '497183277900365835',
-		message: `${callback.id} and uhhh ${callback.username} uhhhhhhh an ${callback.guild_id}  yea this works`
-	});
-	console.log('yea its there');
-	if (callback.username.toLowerCase().includes('discord.gg')) {
-		bot.ban({
-			serverID: callback.guild_id,
-			userID: callback.id
-		});
-	}
-});
-*/
-
 client.on('message', msg => {
+	
+	//special update command, hardcoded
+	if (msg.author.id == tbData.consts.techi && msg.content == '~update') {
+		update();
+	}
 	
 	if (!msg.author.bot) {
 		for (const [name, onmesmodule] of client.onmesmodules) {
-			onmesmodule.execute(msg);
+			onmesmodule.execute(msg, client);
 		}
 	}
-/*	
-	// ~remindme
-	case 'remindme':
-		remind(channelID, userID, message);
-		break;
-	
-	
-	 */
 });
+
+async function update() {
+	await client.destroy();
+	process.exit(27);
+}
 
 client.on('error', console.error);
 
