@@ -108,7 +108,7 @@ client.on('message', msg => {
 	}
 });
 
-client.on('GuildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
 	for (const [name, ongmamodule] of client.ongmamodules) {
 		try {
 			ongmamodule.execute(member);
