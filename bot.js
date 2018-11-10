@@ -108,6 +108,15 @@ client.on('message', msg => {
 	}
 });
 
+client.on('GuildMemberAdd', member => {
+	for (const [name, ongmamodule] of client.ongmamodules) {
+		try {
+			ongmamodule.execute(member);
+		}
+		catch (error) {}
+	}
+});
+
 async function update() {
 	await client.destroy();
 	process.exit(27);
