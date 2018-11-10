@@ -48,6 +48,21 @@ for (const file of onmesModuleFiles) {
 }
 console.log('Finished loading \'onmes\' modules!');
 
+// Load 'ongma' Modules
+console.log('Loading \'ongma\' modules...');
+client.ongmamodules = new Discord.Collection();
+const ongmaModuleFiles = fs.readdirSync('./modules').filter(file => file.startsWith('ongma') && file.endsWith('.js'));
+for (const file of ongmaModuleFiles) {
+	const ongmamodule = require(`./modules/${file}`);
+	client.ongmamodules.set(ongmamodule.name, ongmamodule);
+	try {
+		ongmamodule.onInit()
+	}
+	catch (error) {}
+	console.log(`Loaded module: ${ongmamodule.name}`);
+}
+console.log('Finished loading \'ongma\' modules!');
+
 // Load 'onload' Modules
 console.log('Loading medium priority modules...');
 for (priority = 1; priority < 3; priority++) {
