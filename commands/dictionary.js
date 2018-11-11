@@ -6,7 +6,7 @@ var tbData = require('../data/tbData.js');
 module.exports = {
 	name: 'dictionary',
 	description: 'Configuration command for inbuilt dictionaries.',
-	usage: '{add|remove|new|list} dictionary-name [term to add or remove]',
+	usage: '{add|list|new|remove} dictionary-name [term to add or remove]',
 	args: true,
 	execute(msg, args) {
 		utils.logMessage(msg);
@@ -49,6 +49,17 @@ module.exports = {
 				msg.reply(':ok_hand:');
 				return;
 				break;
+			case 'new':
+				var dictName = args.shift();
+				if (tbData.dictionary.get(dictName)) {
+					msg.reply('dictionary already exists.');
+					return;
+				} else {
+					var initialEntry = [args.join(' ')];
+					tbData.dictionary.set(dictName, initialEntry);
+					msg.reply(':ok_hand:');
+					return;
+				}
 			default:
 				break;
 		}
