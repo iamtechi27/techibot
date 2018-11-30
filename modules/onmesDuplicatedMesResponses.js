@@ -8,7 +8,7 @@ module.exports = {
 		
 		msg.channel.fetchMessages({ limit: 2 })
 			.then(messages => {
-				if (Array.from(messages.values())[1].content.toLowerCase() == msg.content.toLowerCase()) {
+				if (Array.from(messages.values())[1].content.toLowerCase() == Array.from(messages.values())[0].content.toLowerCase()) {
 					utils.timedReply(msg, msg.content.toLowerCase());
 				}
 			})
