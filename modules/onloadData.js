@@ -5,7 +5,7 @@ var tbData = require('../data/tbData.js');
 module.exports = {
 	name: 'data',
 	priority: 0,
-	onInit() {
+	onInit: function() {
 		tbData.load();
 		return;
 	}

@@ -27,7 +27,9 @@ for (const [name, onloadmodule] of client.onloadmodules) {
 		try {
 			onloadmodule.onInit(client);
 		}
-		catch (error) {}
+		catch (error) {
+			console.error(error);
+		}
 		console.log(`Loaded module: ${onloadmodule.name}`);
 	}
 }
