@@ -25,7 +25,6 @@ console.log('Loading high priority modules...');
 for (const [name, onloadmodule] of client.onloadmodules) {
 	if (onloadmodule.priority == 0) {
 		try {
-			console.log('got here');
 			onloadmodule.onInit(client);
 		}
 		catch (error) {

@@ -7,7 +7,6 @@ module.exports = {
 	priority: 0,
 	onInit: function() {
 		tbData.load();
-		console.log('yep this werks');
 		return;
 	}
 }
