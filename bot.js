@@ -105,7 +105,10 @@ client.on('message', msg => {
 	
 	if (!msg.author.bot) {
 		for (const [name, onmesmodule] of client.onmesmodules) {
-			onmesmodule.execute(msg, client);
+			try {
+				onmesmodule.execute(msg, client);
+			}
+			catch (error) {}
 		}
 	}
 });
