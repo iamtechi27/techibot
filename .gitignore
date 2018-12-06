@@ -69,3 +69,6 @@ package-lock.json
 # some variables that the bot uses. these change a lot, so i dont want tracking to get weird
 persData.json
 dictionary.json
+
+# pic files for the auto post function
+autopost/*
