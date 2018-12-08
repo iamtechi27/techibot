@@ -30,6 +30,9 @@ module.exports = {
 		if (msg.author.id == tbData.consts.techi && msg.content.toLowerCase() == "good bot") {
 			utils.timedReply(msg, 'Thank you, master c:');
 		}
+		if (msg.author.id == 179255626273128448 && msg.content.toLowerCase() == 'good bot') {
+			utils.timedReply(msg, 'c:');
+		}
 		if (msg.author.id == tbData.consts.techi && msg.content.toLowerCase() == "bad bot") {
 			utils.timedReply(msg, ':c');
 		}
