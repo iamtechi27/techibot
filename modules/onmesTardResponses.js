@@ -40,5 +40,17 @@ module.exports = {
 		if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
 			msg.channel.send('boi.', new Discord.Attachment('./data/boi.jpg'));
 		}
+		if (/THE FUCK/.test(msg.content)) {
+			msg.channel.send(new Discord.Attachment('./data/thefuck.jpg'));
+		}
+		if (/good dog/.test(msg.content.toLowerCase())) {
+			msg.channel.send(new Discord.Attachment('./data/gooddog.gif'));
+		}
+		if (/boobers/.test(msg.content.toLowerCase())) {
+			msg.channel.send(new Discord.Attachment('./data/boobers.gif'));
+		}
+		if (/YES!/.test(msg.content)) {
+			msg.channel.send(new Discord.Attachment('./data/yes.gif'));
+		}
 	},
 };
