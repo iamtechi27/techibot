@@ -3,6 +3,7 @@
 const utils = require('../tbUtils.js');
 const tbData = require('../data/tbData.js');
 const fs = require('fs');
+const Discord = require('discord.js');
 
 module.exports = {
 	name: 'tard responses',
@@ -36,8 +37,8 @@ module.exports = {
 		if (msg.author.id == tbData.consts.techi && msg.content.toLowerCase() == "bad bot") {
 			utils.timedReply(msg, ':c');
 		}
-		if (msg.content.toLowerCase() == 'hey bot roll pls') {
-			utils.timedReply(msg, '$w');
+		if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
+			msg.channel.send('boi.', new Discord.Attachment('./data/boi.jpg'));
 		}
 	},
 };
