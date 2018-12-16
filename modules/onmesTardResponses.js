@@ -52,7 +52,7 @@ module.exports = {
 			msg.channel.send(new Discord.Attachment('./data/yes.gif'));
 		}
 		if (msg.content == 'fuckin bats man') {
-			utils.timedReply(msg, '**FUCKIN BATS MAN**');
+			utils.timedReply(msg, '***FUCKIN BATS MAN***');
 		}
 	},
 };
