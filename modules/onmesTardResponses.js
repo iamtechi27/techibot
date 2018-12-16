@@ -51,5 +51,8 @@ module.exports = {
 		if (/YES!/.test(msg.content)) {
 			msg.channel.send(new Discord.Attachment('./data/yes.gif'));
 		}
+		if (msg.content == 'fuckin bats man') {
+			utils.timedReply(msg, 'FUCKIN BATS MAN');
+		}
 	},
 };
