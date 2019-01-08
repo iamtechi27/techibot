@@ -54,7 +54,7 @@ module.exports = {
 		if (msg.content == 'fuckin bats man') {
 			utils.timedReply(msg, '***FUCKIN BATS MAN***');
 		}
-		if (/calm ((ur)|(your)) tits/.test(msg.content.toLowerCase()) {
+		if (/calm ((ur)|(your)) tits/.test(msg.content.toLowerCase())) {
 			msg.channel.send(new Discord.Attachment('./data/calmyourtits.png'));
 		}
 	},
