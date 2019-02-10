@@ -18,7 +18,7 @@ module.exports = {
 			await utils.sleep(Math.floor(Math.random() * 7200000) + 3600000);
 			var autopostDirs = fs.readdirSync('./autopost').filter(file => fs.lstatSync(path.resolve('./autopost', file)).isDirectory());
 			for (var i in autopostDirs) {
-				if (Math.floor(Math.random() * 2)) {
+				if (!(Math.floor(Math.random() * 4))) {
 					try {
 						var autopostImages = fs.readdirSync('./autopost/' + autopostDirs[i]).filter(file => file.endsWith('.png') | file.endsWith('.jpg') | file.endsWith('.jpeg'));
 						var autopostImageIndex = Math.floor(Math.random() * autopostImages.length);
