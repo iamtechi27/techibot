@@ -34,7 +34,6 @@ module.exports = {
 			utils.timedReply(msg, 'thank you i twy my vewy hawdest :3 uwu');
 		} else if (msg.author.id == tbData.consts.techi && msg.content.toLowerCase() == "bad bot") {
 			utils.timedReply(msg, ':c');
-		}
 		} else if (msg.content.toLowerCase() == 'bad bot') {
 			utils.timedReply(msg, 'no u');
 		}
