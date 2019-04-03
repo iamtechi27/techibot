@@ -37,9 +37,9 @@ module.exports = {
 		} else if (msg.content.toLowerCase() == 'bad bot') {
 			utils.timedReply(msg, 'no u');
 		}
-		if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
-			msg.channel.send('boi.', new Discord.Attachment('./data/boi.jpg'));
-		}
+		//if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
+			//msg.channel.send('boi.', new Discord.Attachment('./data/boi.jpg'));
+		//}
 		if (/THE FUCK/.test(msg.content)) {
 			msg.channel.send(new Discord.Attachment('./data/thefuck.jpg'));
 		}
