@@ -9,6 +9,5 @@ module.exports = {
 	execute(msg) {
 		utils.logMessage(msg);
 		utils.timedReply(msg, 'nope!');
-		}
 	},
 };
