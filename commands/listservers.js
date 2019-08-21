@@ -8,7 +8,7 @@ module.exports = {
 		var response = "";
 		for (let [snowflake, guild] of guilds) {
 			response += guild.name + ' (' + snowflake + ')\n';
-		}
-		msg.channel.send(response);
+			}
+		msg.channel.send(response)
 	},
 };
