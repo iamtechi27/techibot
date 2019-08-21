@@ -16,7 +16,7 @@ module.exports = {
 		}
 		console.log('Commands loaded!');
 	},
-	execute(msg) {
+	execute(msg, client) {
 		if (msg.content.substring(0, 1) == '~') {
 			const args = msg.content.slice(1).split(/ +/);
 			const commandName = args.shift().toLowerCase();
@@ -37,7 +37,7 @@ module.exports = {
 			}
 			
 			try {
-				command.execute(msg, args);
+				command.execute(msg, args, client);
 			}
 			catch (error) {
 				console.error(error);
