@@ -11,21 +11,25 @@ module.exports = {
 		// uwu
 		if (msg.content == 'uwu') {
 			utils.timedReply(msg, 'owo');
+			return;
 		}
 		//"Don't @ me"
 		if (/n['o]?t .*@ me/.test(msg.content.toLowerCase())) {
 			utils.logMessage(msg);
 			utils.timedReply(msg, `${msg.author}`)
+			return;
 		}
 		//nya?
 		if (/mew /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'mew') {
 			utils.logMessage(msg);
 			utils.timedReply(msg, 'nya? :3');
+			return;
 		}
 		//nya!
 		if (msg.content.toLowerCase().includes('nya') && msg.author.id != tbData.consts.techibot) {
 			utils.logMessage(msg);
 			utils.timedReply(msg, 'nya~!');
+			return;
 		}
 		//thank you daddy
 		if (msg.author.id == tbData.consts.techi && msg.content.toLowerCase() == "good bot") {
@@ -42,21 +46,27 @@ module.exports = {
 		//}
 		if (/THE FUCK/.test(msg.content)) {
 			msg.channel.send(new Discord.Attachment('./data/thefuck.jpg'));
+			return;
 		}
 		if (/good dog/.test(msg.content.toLowerCase())) {
 			msg.channel.send(new Discord.Attachment('./data/gooddog.gif'));
+			return;
 		}
 		if (/boobers/.test(msg.content.toLowerCase())) {
 			msg.channel.send(new Discord.Attachment('./data/boobers.gif'));
+			return;
 		}
 		if (/YES!/.test(msg.content)) {
 			msg.channel.send(new Discord.Attachment('./data/yes.gif'));
+			return;
 		}
 		if (msg.content == 'fuckin bats man') {
 			utils.timedReply(msg, '***FUCKIN BATS MAN***');
+			return;
 		}
 		if (/calm ((ur)|(your)) tits/.test(msg.content.toLowerCase())) {
 			msg.channel.send(new Discord.Attachment('./data/calmyourtits.png'));
+			return;
 		}
 	},
 };
