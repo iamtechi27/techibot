@@ -68,7 +68,7 @@ module.exports = {
 			msg.channel.send(new Discord.Attachment('./data/calmyourtits.png'));
 			return;
 		}
-		if (msg.content == 'HOES MAD') {
+		if (msg.content.toLowerCase() == 'hoes mad') {
 			msg.channel.send('HOES MAD');
 			return;
 		}
