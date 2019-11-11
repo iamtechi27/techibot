@@ -69,7 +69,11 @@ module.exports = {
 			return;
 		}
 		if (msg.content.toLowerCase() == 'hoes mad') {
-			msg.channel.send('HOES MAD');
+			utils.timedReply(msg, 'HOES MAD');
+			return;
+		}
+		if (msg.content.toLowerCase() == 'how') {
+			utils.timedReply(msg, 'HOW');
 			return;
 		}
 	},
