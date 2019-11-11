@@ -6,7 +6,7 @@ module.exports = {
 	name: 'DuplicateMesResponses',
 	execute(msg) {
 		
-		if(msg.content != "" && msg.content != "nya~!" && msg.content.toLowerCase() != "hoes mad") {
+		if(msg.content != "" && msg.content != "nya~!" && msg.content.toLowerCase() != "hoes mad" && msg.content.toLowerCase() != "how") {
 			msg.channel.fetchMessages({ limit: 2 })
 				.then(messages => {
 					if ((Array.from(messages.values())[1].content.toLowerCase() == Array.from(messages.values())[0].content.toLowerCase()) && (Array.from(messages.values())[0].author.id != Array.from(messages.values())[1].author.id)) {
