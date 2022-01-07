@@ -6,6 +6,6 @@ module.exports = {
 	name: 'beep boop',
 	priority: 3,
 	onInit(client) {
-		client.guilds.get(tbData.consts.chilling).channels.get(tbData.consts.framework).send('beep, boop');
+		client.guilds.resolve(tbData.consts.chilling).channels.resolve(tbData.consts.framework).send('beep, boop');
 	}
 }

@@ -2,10 +2,9 @@
 
 module.exports = {
 	timedReply: async function(msg, reply) {
-		msg.channel.startTyping();
+		msg.channel.sendTyping();
 		await this.sleep((reply.length * 100) + 250);
 		msg.channel.send(reply);
-		msg.channel.stopTyping();
 	},
 	logMessage: function(msg) {
 		console.log('Received Message:');

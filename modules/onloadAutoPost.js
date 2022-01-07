@@ -22,7 +22,7 @@ module.exports = {
 					try {
 						var autopostImages = fs.readdirSync('./autopost/' + autopostDirs[i]).filter(file => file.endsWith('.png') | file.endsWith('.jpg') | file.endsWith('.jpeg'));
 						var autopostImageIndex = Math.floor(Math.random() * autopostImages.length);
-						await client.channels.get(autopostDirs[i].substring(autopostDirs[i].indexOf('(') + 1, autopostDirs[i].indexOf(')'))).send(new Discord.Attachment('./autopost/' + autopostDirs[i] + '/' + autopostImages[autopostImageIndex]));
+						await client.channels.get(autopostDirs[i].substring(autopostDirs[i].indexOf('(') + 1, autopostDirs[i].indexOf(')'))).send(new Discord.Attachment('./autopost/' + autopostDirs[i] + '/' + autopostImages[autopostImageIndex]));	// good luck :)
 						fs.unlinkSync('./autopost/' + autopostDirs[i] + '/' + autopostImages[autopostImageIndex]);
 					} catch (error) {}
 				}
