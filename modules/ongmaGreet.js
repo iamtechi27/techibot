@@ -23,7 +23,7 @@ module.exports = {
 	},
 	execute: async function(member) {
 		if (this.guilds.includes(member.guild.id)) {
-			await utils.sleep(10000);
+			await utils.sleep(10);
 			if (!member.deleted) {
 				member.guild.channels.get(this.guildGreetChannels.get(member.guild.id)).send(`<@${member.id}>`, "sup nerd");
 				console.log(`greeted new member ${member.displayName}`);
