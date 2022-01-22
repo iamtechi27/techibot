@@ -72,3 +72,4 @@ dictionary.json
 
 # pic files for the auto post function
 autopost/*
+.vscode/launch.json

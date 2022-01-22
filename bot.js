@@ -17,7 +17,7 @@ console.log('Loading pre-init modules...');
 
 // Collect 'onload' Modules
 console.log('Collecting \'onload\' modules...');
-client.onloadmodules = new Discord.Collection();
+client.onloadmodules = new Map();
 const onloadModuleFiles = fs.readdirSync('./modules').filter(file => file.startsWith('onload') && file.endsWith('.js'));
 for (const file of onloadModuleFiles) {
 	const onloadmodule = require(`./modules/${file}`);
@@ -42,7 +42,7 @@ console.log('Finished loading high priority modules!');
 
 // Load 'onmes' Modules
 console.log('Loading \'onmes\' modules...');
-client.onmesmodules = new Discord.Collection();
+client.onmesmodules = new Map();
 const onmesModuleFiles = fs.readdirSync('./modules').filter(file => file.startsWith('onmes') && file.endsWith('.js'));
 for (const file of onmesModuleFiles) {
 	const onmesmodule = require(`./modules/${file}`);
@@ -57,7 +57,7 @@ console.log('Finished loading \'onmes\' modules!');
 
 // Load 'ongma' Modules
 console.log('Loading \'ongma\' modules...');
-client.ongmamodules = new Discord.Collection();
+client.ongmamodules = new Map();
 const ongmaModuleFiles = fs.readdirSync('./modules').filter(file => file.startsWith('ongma') && file.endsWith('.js'));
 for (const file of ongmaModuleFiles) {
 	const ongmamodule = require(`./modules/${file}`);

@@ -41,23 +41,44 @@ module.exports = {
 		} else if (msg.content.toLowerCase() == 'bad bot') {
 			utils.timedReply(msg, 'no u');
 		}
-		//if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
-			//msg.channel.send('boi.', new Discord.Attachment('./data/boi.jpg'));
-		//}
+		if (/boi.? /.test(msg.content.toLowerCase()) || msg.content.toLowerCase() == 'boi' || msg.content.toLowerCase == 'boi.') {
+			msg.channel.send({
+				content: 'boi.',
+				files: ['./data/boi.jpg']
+			})
+				.then(console.log)
+				.catch(console.error);
+		}
 		if (/THE FUCK/.test(msg.content)) {
-			msg.channel.send(new Discord.Attachment('./data/thefuck.jpg'));
+			msg.channel.send({
+				files: ['./data/thefuck.jpg']
+			})
+				.then(console.log)
+				.catch(console.error);
 			return;
 		}
 		if (/good dog/.test(msg.content.toLowerCase())) {
-			msg.channel.send(new Discord.Attachment('./data/gooddog.gif'));
+			msg.channel.send({
+				files: ['./data/gooddog.gif']
+			})
+				.then(console.log)
+				.catch(console.error);
 			return;
 		}
 		if (/boobers/.test(msg.content.toLowerCase())) {
-			msg.channel.send(new Discord.Attachment('./data/boobers.gif'));
+			msg.channel.send({
+				files: ['./data/boobers.gif']
+			})
+				.then(console.log)
+				.catch(console.error);
 			return;
 		}
 		if (/YES!/.test(msg.content)) {
-			msg.channel.send(new Discord.Attachment('./data/yes.gif'));
+			msg.channel.send({
+				files: ['./data/yes.gif']
+			})
+				.then(console.log)
+				.catch(console.error);
 			return;
 		}
 		if (msg.content == 'fuckin bats man') {
@@ -65,7 +86,11 @@ module.exports = {
 			return;
 		}
 		if (/calm ((ur)|(your)) tits/.test(msg.content.toLowerCase())) {
-			msg.channel.send(new Discord.Attachment('./data/calmyourtits.png'));
+			msg.channel.send({
+				files: ['./data/calmyourtits.png']
+			})
+				.then(console.log)
+				.catch(console.error);
 			return;
 		}
 		if (msg.content.toLowerCase() == 'hoes mad') {
