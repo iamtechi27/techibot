@@ -14,9 +14,9 @@ module.exports = {
 			return;
 		}
 		var guildID = args.shift();
-		if (client.guilds.get(guildID).available) {
-			var guildName = client.guilds.get(guildID).name;
-			client.guilds.get(guildID).leave();
+		if (client.guilds.resolve(guildID).available) {
+			var guildName = client.guilds.resolve(guildID).name;
+			client.guilds.resolve(guildID).leave();
 			msg.reply('I left ' + guildName + '(' + guildID + ')');
 		} else {
 			msg.reply('couldn\'t find that server');

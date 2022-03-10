@@ -1,7 +1,6 @@
 //ongmaGreet.js
 
 const utils = require('../tbUtils.js');
-const Discord = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
@@ -23,11 +22,10 @@ module.exports = {
 	},
 	execute: async function(member) {
 		if (this.guilds.includes(member.guild.id)) {
-			await utils.sleep(10);
-			if (!member.deleted) {
-				member.guild.channels.get(this.guildGreetChannels.get(member.guild.id)).send(`<@${member.id}>` + " sup nerd");
-				console.log(`greeted new member ${member.displayName}`);
-			}
+			member.guilds.channels.resolve(this.guildGreetChannels.get(member.guild.id)).sendTyping();
+			await utils.sleep(5000);
+			member.guild.channels.resolve(this.guildGreetChannels.resolve(member.guild.id)).send(`<@${member.id}>` + " sup nerd");
+			console.log(`greeted new member ${member.displayName}`);
 		}
 	}
 } 
